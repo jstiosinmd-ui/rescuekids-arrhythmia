@@ -385,6 +385,11 @@ function show(i){
   slides.forEach((s,k)=>s.classList.toggle('active',k===cur));
   [...dots.children].forEach((d,k)=>d.setAttribute('aria-selected',k===cur?'true':'false'));
   counter.innerHTML='<b>'+String(cur+1).padStart(2,'0')+'</b> / '+slides.length;
+  // Deck mode has no viewport scroll, and a hidden slide never intersects, so
+  // a lazy image on it may never load and the chart simply never appears.
+  // Promote this slide's images and the next slide's to eager.
+  [cur,cur+1,cur-1].forEach(k=>{const s2=slides[k]; if(!s2)return;
+    s2.querySelectorAll('img[loading="lazy"]').forEach(im=>{im.loading='eager';});});
   if(prevBtn){prevBtn.disabled=cur===0; nextBtn.disabled=cur===slides.length-1;}
   // Announce to a screen reader; opacity/visibility changes are silent otherwise.
   const t=slides[cur].querySelector('.conv-title,.sec-title,.fig-title');
