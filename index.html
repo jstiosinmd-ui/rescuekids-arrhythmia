@@ -110,7 +110,7 @@ ol.takeaways{list-style:none;max-width:840px;margin:0 auto;text-align:left;width
 ol.takeaways li{display:flex;gap:13px;align-items:center;margin-bottom:clamp(7px,1.3vh,15px);
   font-size:clamp(13px,1.5vw,20px);color:#EAF1F8}
 /* ---- figure slides ---- */
-.slide.imageslide{padding:2vh calc(2vw + var(--safe-l)) calc(var(--chrome) + var(--safe-b)) calc(2vw + var(--safe-r))}
+.slide.imageslide{padding:1.4vh calc(1.2vw + var(--safe-l)) calc(var(--chrome) + var(--safe-b)) calc(1.2vw + var(--safe-r))}
 .l-figure{position:relative;width:100%;height:100%;display:flex;flex-direction:column;
   align-items:center;justify-content:center;gap:5px}
 .fighead{position:absolute;top:0;left:.6vw;max-width:27vw;z-index:2;
@@ -119,8 +119,9 @@ ol.takeaways li{display:flex;gap:13px;align-items:center;margin-bottom:clamp(7px
   color:var(--navy-deep);margin-top:5px;line-height:1.12}
 .figbtn{display:block;max-width:100%;min-height:0;flex:1;background:none;border:0;padding:0;
   cursor:zoom-in;font:inherit;display:flex;align-items:center;justify-content:center}
-.figbtn img{max-width:100%;max-height:100%;object-fit:contain;background:#fff;
-  border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 20px rgba(16,26,74,.14)}
+.figbtn img{height:100%;width:auto;max-width:100%;max-height:100%;object-fit:contain;
+  background:#fff;border:1px solid var(--border);border-radius:12px;
+  box-shadow:0 8px 20px rgba(16,26,74,.14)}
 .figbtn:focus-visible{outline:3px solid var(--yellow);outline-offset:3px;border-radius:14px}
 .figcap{font-size:clamp(11px,.95vw,13px);color:var(--text-subtle);font-style:italic;
   text-align:center}
@@ -224,7 +225,7 @@ ol.takeaways li{display:flex;gap:13px;align-items:center;margin-bottom:clamp(7px
   .card:last-child{margin-bottom:0}
   .tablewrap{overflow-x:auto;flex:none}
   .figbtn{display:block;width:100%;flex:none;cursor:zoom-in}
-  .figbtn img{max-height:none;width:100%}
+  .figbtn img{width:100%;height:auto;max-height:none}
   .glow{display:none}
   /* Deck chrome has no job in a scrolling document. */
   #dots,#arrows,#hint,#counter{display:none}
